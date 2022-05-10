@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends PanelContainer
+
+var item:Dictionary
+
+func generate_item(_item:Dictionary):
+	item = _item
+	get_node(\"TextureButton\").texture_normal = load(item[\"texture\"])
+	get_node(\"TextureButton/Label\").text = str(item[\"count\"])
+
+func destory_item():
+	item.clear()
+	get_node(\"TextureButton\").texture_normal = null
+	get_node(\"TextureButton/Label\").text = \"\"
+	
+func clear_item():
+	item.clear()
+
+func get_item():
+	return item
+	
+func is_has_item():
+	return !item.empty()
+
+
+
+
+"
+
+[node name="Slot" type="PanelContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+mouse_filter = 1
+script = SubResource( 1 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 57.0
+margin_bottom = 57.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="TextureButton"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -14.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+align = 2
+valign = 2

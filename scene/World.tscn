@@ -1,0 +1,2363 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://asset/pic/test_00/TX Tileset Grass.png" type="Texture" id=1]
+[ext_resource path="res://asset/pic/test_01_player/Gladiator-Sprite Sheet.png" type="Texture" id=2]
+[ext_resource path="res://src/player/player.gd" type="Script" id=3]
+[ext_resource path="res://asset/pic/test_00/TX Tileset Wall.png" type="Texture" id=4]
+[ext_resource path="res://addons/miros/module/OneModel/OneState.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/enemy/Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene/fps.gd" type="Script" id=7]
+
+[sub_resource type="TileSet" id=1]
+0/name = "TX Tileset Grass.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 256, 256 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=20]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=21]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=22]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=23]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=24]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=25]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=26]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="TileSet" id=4]
+0/name = "TX Tileset Wall.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 384, 64, 16, 16 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "TX Tileset Wall.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 384, 64, 64, 96 )
+1/tile_mode = 2
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 16, 16 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 5 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 4 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 5 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 5 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 18 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 19 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 20 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 21 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 4 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 22 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 5 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 23 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 5 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 24 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 5 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 25 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 5 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 26 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 5.0
+height = 0.0
+
+[sub_resource type="Animation" id=31]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("HitBox/CollisionShape2D:shape:extents")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 2 ), Vector2( 6, 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HitBox/CollisionShape2D:shape:extents")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( 5, 8.5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "idle"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 4, 0 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "run"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1 ), Vector2( 7, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 0, 0 )
+
+[sub_resource type="CapsuleShape2D" id=33]
+radius = 8.0
+height = 8.0
+
+[node name="World" type="Node2D"]
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="TileMap" type="TileMap" parent="YSort"]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -655373, 0, 0, -655372, 0, 0, -655371, 0, 0, -655370, 0, 0, -655369, 0, 0, -655368, 0, 0, -655367, 0, 0, -655366, 0, 0, -655365, 0, 0, -655364, 0, 0, -655363, 0, 0, -655362, 0, 0, -655361, 0, 0, -720896, 0, 0, -720895, 0, 0, -720894, 0, 0, -720893, 0, 0, -720892, 0, 0, -720891, 0, 0, -720890, 0, 0, -720889, 0, 0, -720888, 0, 0, -720887, 0, 0, -720886, 0, 0, -720885, 0, 0, -720884, 0, 0, -720883, 0, 0, -720882, 0, 0, -720881, 0, 0, -720880, 0, 0, -720879, 0, 0, -720878, 0, 0, -720877, 0, 0, -720876, 0, 0, -720875, 0, 0, -720874, 0, 0, -720873, 0, 0, -720872, 0, 0, -589837, 0, 0, -589836, 0, 0, -589835, 0, 0, -589834, 0, 0, -589833, 0, 0, -589832, 0, 0, -589831, 0, 0, -589830, 0, 0, -589829, 0, 0, -589828, 0, 0, -589827, 0, 0, -589826, 0, 0, -589825, 0, 0, -655360, 0, 0, -655359, 0, 0, -655358, 0, 0, -655357, 0, 0, -655356, 0, 0, -655355, 0, 0, -655354, 0, 0, -655353, 0, 655369, -655352, 0, 720898, -655351, 0, 0, -655350, 0, 0, -655349, 0, 0, -655348, 0, 0, -655347, 0, 0, -655346, 0, 0, -655345, 0, 0, -655344, 0, 0, -655343, 0, 0, -655342, 0, 0, -655341, 0, 0, -655340, 0, 0, -655339, 0, 0, -655338, 0, 0, -655337, 0, 0, -655336, 0, 0, -524301, 0, 0, -524300, 0, 786433, -524299, 0, 786437, -524298, 0, 851968, -524297, 0, 0, -524296, 0, 0, -524295, 0, 0, -524294, 0, 0, -524293, 0, 0, -524292, 0, 0, -524291, 0, 0, -524290, 0, 0, -524289, 0, 0, -589824, 0, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -589818, 0, 0, -589817, 0, 655369, -589816, 0, 655369, -589815, 0, 0, -589814, 0, 0, -589813, 0, 0, -589812, 0, 0, -589811, 0, 0, -589810, 0, 0, -589809, 0, 0, -589808, 0, 0, -589807, 0, 0, -589806, 0, 0, -589805, 0, 0, -589804, 0, 0, -589803, 0, 0, -589802, 0, 0, -589801, 0, 0, -589800, 0, 0, -458765, 0, 0, -458764, 0, 786437, -458763, 0, 786437, -458762, 0, 786433, -458761, 0, 0, -458760, 0, 0, -458759, 0, 0, -458758, 0, 0, -458757, 0, 0, -458756, 0, 0, -458755, 0, 0, -458754, 0, 0, -458753, 0, 0, -524288, 0, 0, -524287, 0, 0, -524286, 0, 0, -524285, 0, 0, -524284, 0, 0, -524283, 0, 0, -524282, 0, 720898, -524281, 0, 0, -524280, 0, 655369, -524279, 0, 655369, -524278, 0, 0, -524277, 0, 0, -524276, 0, 131085, -524275, 0, 0, -524274, 0, 0, -524273, 0, 0, -524272, 0, 0, -524271, 0, 0, -524270, 0, 0, -524269, 0, 0, -524268, 0, 0, -524267, 0, 0, -524266, 0, 0, -524265, 0, 0, -524264, 0, 0, -393229, 0, 0, -393228, 0, 786438, -393227, 0, 786433, -393226, 0, 0, -393225, 0, 0, -393224, 0, 0, -393223, 0, 0, -393222, 0, 0, -393221, 0, 0, -393220, 0, 0, -393219, 0, 0, -393218, 0, 0, -393217, 0, 0, -458752, 0, 0, -458751, 0, 0, -458750, 0, 0, -458749, 0, 0, -458748, 0, 0, -458747, 0, 720898, -458746, 0, 720898, -458745, 0, 655375, -458744, 0, 655369, -458743, 0, 720898, -458742, 0, 0, -458741, 0, 0, -458740, 0, 131085, -458739, 0, 0, -458738, 0, 0, -458737, 0, 0, -458736, 0, 0, -458735, 0, 0, -458734, 0, 0, -458733, 0, 0, -458732, 0, 0, -458731, 0, 0, -458730, 0, 0, -458729, 0, 0, -458728, 0, 0, -327693, 0, 0, -327692, 0, 0, -327691, 0, 0, -327690, 0, 0, -327689, 0, 0, -327688, 0, 0, -327687, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 589836, -327683, 0, 589839, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 589836, -393211, 0, 655361, -393210, 0, 655369, -393209, 0, 655369, -393208, 0, 655369, -393207, 0, 0, -393206, 0, 0, -393205, 0, 0, -393204, 0, 131085, -393203, 0, 0, -393202, 0, 0, -393201, 0, 0, -393200, 0, 0, -393199, 0, 0, -393198, 0, 0, -393197, 0, 0, -393196, 0, 0, -393195, 0, 0, -393194, 0, 0, -393193, 0, 0, -393192, 0, 0, -262157, 0, 0, -262156, 0, 0, -262155, 0, 0, -262154, 0, 0, -262153, 0, 0, -262152, 0, 131085, -262151, 0, 0, -262150, 0, 0, -262149, 0, 0, -262148, 0, 589836, -262147, 0, 0, -262146, 0, 917504, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 655369, -327673, 0, 0, -327672, 0, 589839, -327671, 0, 0, -327670, 0, 0, -327669, 0, 0, -327668, 0, 0, -327667, 0, 0, -327666, 0, 0, -327665, 0, 0, -327664, 0, 0, -327663, 0, 0, -327662, 0, 0, -327661, 0, 0, -327660, 0, 0, -327659, 0, 0, -327658, 0, 0, -327657, 0, 0, -327656, 0, 0, -196621, 0, 0, -196620, 0, 0, -196619, 0, 0, -196618, 0, 0, -196617, 0, 0, -196616, 0, 0, -196615, 0, 12, -196614, 0, 0, -196613, 0, 0, -196612, 0, 851983, -196611, 0, 720898, -196610, 0, 917504, -196609, 0, 917504, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 655369, -262137, 0, 0, -262136, 0, 0, -262135, 0, 589839, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -262129, 0, 0, -262128, 0, 0, -262127, 0, 0, -262126, 0, 0, -262125, 0, 0, -262124, 0, 0, -262123, 0, 0, -262122, 0, 0, -262121, 0, 0, -262120, 0, 0, -131085, 0, 0, -131084, 0, 0, -131083, 0, 0, -131082, 0, 0, -131081, 0, 0, -131080, 0, 0, -131079, 0, 131085, -131078, 0, 0, -131077, 0, 0, -131076, 0, 851983, -131075, 0, 0, -131074, 0, 0, -131073, 0, 917504, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 655375, -196602, 0, 655369, -196601, 0, 0, -196600, 0, 12, -196599, 0, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -196595, 0, 0, -196594, 0, 0, -196593, 0, 0, -196592, 0, 0, -196591, 0, 0, -196590, 0, 0, -196589, 0, 0, -196588, 0, 0, -196587, 0, 0, -196586, 0, 0, -196585, 0, 0, -196584, 0, 0, -65549, 0, 0, -65548, 0, 0, -65547, 0, 0, -65546, 0, 0, -65545, 0, 0, -65544, 0, 0, -65543, 0, 0, -65542, 0, 0, -65541, 0, 589839, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 589839, -131067, 0, 589839, -131066, 0, 589839, -131065, 0, 131085, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 12, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -131054, 0, 0, -131053, 0, 0, -131052, 0, 0, -131051, 0, 0, -131050, 0, 0, -131049, 0, 0, -131048, 0, 0, -13, 0, 0, -12, 0, 0, -11, 0, 0, -10, 0, 0, -9, 0, 0, -8, 0, 0, -7, 0, 0, -6, 0, 0, -5, 0, 0, -4, 0, 589836, -3, 0, 720898, -2, 0, 720898, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 655375, -65533, 0, 0, -65532, 0, 0, -65531, 0, 589839, -65530, 0, 589836, -65529, 0, 0, -65528, 0, 131085, -65527, 0, 131085, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 589839, -65521, 0, 8, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, -65512, 0, 0, 65523, 0, 0, 65524, 0, 0, 65525, 0, 0, 65526, 0, 0, 65527, 0, 0, 65528, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 720898, 65533, 0, 720898, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 655369, 6, 0, 589836, 7, 0, 720898, 8, 0, 0, 9, 0, 131085, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 131059, 0, 0, 131060, 0, 0, 131061, 0, 0, 131062, 0, 0, 131063, 0, 0, 131064, 0, 589839, 131065, 0, 589839, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 12, 65540, 0, 0, 65541, 0, 655369, 65542, 0, 655369, 65543, 0, 720898, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 0, 0, 65558, 0, 0, 65559, 0, 0, 65560, 0, 0, 196595, 0, 0, 196596, 0, 0, 196597, 0, 0, 196598, 0, 0, 196599, 0, 0, 196600, 0, 0, 196601, 0, 0, 196602, 0, 0, 196603, 0, 131085, 196604, 0, 0, 196605, 0, 0, 196606, 0, 131085, 196607, 0, 131085, 131072, 0, 0, 131073, 0, 655375, 131074, 0, 655375, 131075, 0, 655369, 131076, 0, 655369, 131077, 0, 720898, 131078, 0, 655369, 131079, 0, 0, 131080, 0, 720898, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 131095, 0, 0, 131096, 0, 0, 262131, 0, 0, 262132, 0, 0, 262133, 0, 0, 262134, 0, 0, 262135, 0, 0, 262136, 0, 0, 262137, 0, 589839, 262138, 0, 720898, 262139, 0, 131085, 262140, 0, 0, 262141, 0, 0, 262142, 0, 655369, 262143, 0, 655369, 196608, 0, 655369, 196609, 0, 655369, 196610, 0, 655369, 196611, 0, 0, 196612, 0, 0, 196613, 0, 655369, 196614, 0, 655369, 196615, 0, 0, 196616, 0, 720898, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196627, 0, 0, 196628, 0, 0, 196629, 0, 0, 196630, 0, 0, 196631, 0, 0, 196632, 0, 0, 327667, 0, 0, 327668, 0, 0, 327669, 0, 0, 327670, 0, 0, 327671, 0, 0, 327672, 0, 0, 327673, 0, 655369, 327674, 0, 655369, 327675, 0, 655369, 327676, 0, 655375, 327677, 0, 655369, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 589836, 262150, 0, 655369, 262151, 0, 655369, 262152, 0, 655369, 262153, 0, 589836, 262154, 0, 655369, 262155, 0, 12, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 262166, 0, 0, 262167, 0, 0, 262168, 0, 0, 393203, 0, 0, 393204, 0, 0, 393205, 0, 0, 393206, 0, 0, 393207, 0, 0, 393208, 0, 0, 393209, 0, 655375, 393210, 0, 655369, 393211, 0, 0, 393212, 0, 589839, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 655369, 327686, 0, 655369, 327687, 0, 589839, 327688, 0, 589839, 327689, 0, 589839, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 458739, 0, 0, 458740, 0, 0, 458741, 0, 0, 458742, 0, 0, 458743, 0, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 655369, 458747, 0, 0, 458748, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 720899, 393218, 0, 720899, 393219, 0, 0, 393220, 0, 0, 393221, 0, 655369, 393222, 0, 655365, 393223, 0, 589839, 393224, 0, 589839, 393225, 0, 720898, 393226, 0, 12, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 524275, 0, 0, 524276, 0, 0, 524277, 0, 0, 524278, 0, 0, 524279, 0, 0, 524280, 0, 0, 524281, 0, 0, 524282, 0, 655369, 524283, 0, 0, 524284, 0, 0, 524285, 0, 0, 524286, 0, 0, 524287, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 589839, 458758, 0, 655365, 458759, 0, 655365, 458760, 0, 655375, 458761, 0, 0, 458762, 0, 12, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 589811, 0, 0, 589812, 0, 0, 589813, 0, 0, 589814, 0, 0, 589815, 0, 0, 589816, 0, 0, 589817, 0, 0, 589818, 0, 0, 589819, 0, 0, 589820, 0, 0, 589821, 0, 0, 589822, 0, 0, 589823, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 589839, 524293, 0, 589839, 524294, 0, 720899, 524295, 0, 655365, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 524312, 0, 0, 655347, 0, 0, 655348, 0, 0, 655349, 0, 0, 655350, 0, 655369, 655351, 0, 655369, 655352, 0, 0, 655353, 0, 720898, 655354, 0, 0, 655355, 0, 0, 655356, 0, 0, 655357, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 720899, 589826, 0, 0, 589827, 0, 0, 589828, 0, 720899, 589829, 0, 655369, 589830, 0, 0, 589831, 0, 655365, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 589836, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 720883, 0, 0, 720884, 0, 0, 720885, 0, 0, 720886, 0, 655369, 720887, 0, 655369, 720888, 0, 720898, 720889, 0, 655369, 720890, 0, 655369, 720891, 0, 655369, 720892, 0, 655369, 720893, 0, 655369, 720894, 0, 589836, 720895, 0, 655369, 655360, 0, 655375, 655361, 0, 655369, 655362, 0, 655369, 655363, 0, 655369, 655364, 0, 655369, 655365, 0, 720898, 655366, 0, 655369, 655367, 0, 655369, 655368, 0, 589839, 655369, 0, 589839, 655370, 0, 589839, 655371, 0, 589836, 655372, 0, 655369, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 786419, 0, 0, 786420, 0, 0, 786421, 0, 0, 786422, 0, 0, 786423, 0, 0, 786424, 0, 0, 786425, 0, 0, 786426, 0, 0, 786427, 0, 0, 786428, 0, 0, 786429, 0, 0, 786430, 0, 0, 786431, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 720898, 720902, 0, 589839, 720903, 0, 589839, 720904, 0, 0, 720905, 0, 589836, 720906, 0, 589836, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 131085, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 851955, 0, 0, 851956, 0, 0, 851957, 0, 0, 851958, 0, 0, 851959, 0, 0, 851960, 0, 0, 851961, 0, 0, 851962, 0, 0, 851963, 0, 0, 851964, 0, 0, 851965, 0, 0, 851966, 0, 0, 851967, 0, 720898, 786432, 0, 720898, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 655369, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 917491, 0, 0, 917492, 0, 0, 917493, 0, 0, 917494, 0, 0, 917495, 0, 0, 917496, 0, 0, 917497, 0, 0, 917498, 0, 0, 917499, 0, 0, 917500, 0, 0, 917501, 0, 0, 917502, 0, 0, 917503, 0, 0, 851968, 0, 0, 851969, 0, 720898, 851970, 0, 720898, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 655369, 851975, 0, 12, 851976, 0, 12, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 983027, 0, 0, 983028, 0, 0, 983029, 0, 0, 983030, 0, 0, 983031, 0, 0, 983032, 0, 0, 983033, 0, 0, 983034, 0, 0, 983035, 0, 0, 983036, 0, 0, 983037, 0, 0, 983038, 0, 0, 983039, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 655369, 917510, 0, 655370, 917511, 0, 720898, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 1048563, 0, 0, 1048564, 0, 0, 1048565, 0, 0, 1048566, 0, 0, 1048567, 0, 0, 1048568, 0, 0, 1048569, 0, 0, 1048570, 0, 0, 1048571, 0, 0, 1048572, 0, 0, 1048573, 0, 0, 1048574, 0, 0, 1048575, 0, 0, 983040, 0, 0, 983041, 0, 0, 983042, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 655369, 983046, 0, 655370, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983053, 0, 0, 983054, 0, 0, 983055, 0, 0, 983056, 0, 0, 983057, 0, 0, 983058, 0, 0, 983059, 0, 0, 983060, 0, 0, 983061, 0, 0, 983062, 0, 0, 983063, 0, 0, 983064, 0, 0, 1114099, 0, 0, 1114100, 0, 0, 1114101, 0, 0, 1114102, 0, 0, 1114103, 0, 0, 1114104, 0, 0, 1114105, 0, 0, 1114106, 0, 0, 1114107, 0, 0, 1114108, 0, 0, 1114109, 0, 0, 1114110, 0, 0, 1114111, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 131085, 1048587, 0, 131085, 1048588, 0, 131085, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0 )
+
+[node name="Wall" type="TileMap" parent="YSort"]
+tile_set = SubResource( 4 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -655373, 1, 0, -655372, 1, 2, -655371, 1, 2, -655370, 1, 2, -655369, 1, 2, -655368, 1, 2, -655367, 1, 2, -655366, 1, 2, -655365, 1, 2, -655364, 1, 2, -655363, 1, 2, -655362, 1, 2, -655361, 1, 2, -720896, 1, 2, -720895, 1, 2, -720894, 1, 2, -720893, 1, 2, -720892, 1, 2, -720891, 1, 2, -720890, 1, 2, -720889, 1, 2, -720888, 1, 2, -720887, 1, 2, -720886, 1, 2, -720885, 1, 2, -720884, 1, 2, -720883, 1, 2, -720882, 1, 2, -720881, 1, 2, -720880, 1, 2, -720879, 1, 2, -720878, 1, 2, -720877, 1, 2, -720876, 1, 2, -720875, 1, 2, -720874, 1, 2, -720873, 1, 2, -720872, 1, 3, -589837, 1, 65536, -655336, 1, 65539, -524301, 1, 65536, -589800, 1, 65539, -458765, 1, 65536, -524264, 1, 65539, -393229, 1, 65536, -458728, 1, 65539, -327693, 1, 65536, -393192, 1, 65539, -262157, 1, 65536, -327656, 1, 65539, -196621, 1, 65536, -262120, 1, 65539, -131085, 1, 65536, -196584, 1, 65539, -65549, 1, 65536, -131048, 1, 65539, -13, 1, 65536, -65512, 1, 65539, 65523, 1, 65536, 24, 1, 65539, 131059, 1, 65536, 65560, 1, 65539, 196595, 1, 65536, 131096, 1, 65539, 262131, 1, 65536, 196632, 1, 65539, 327667, 1, 65536, 262168, 1, 65539, 393203, 1, 65536, 327704, 1, 65539, 458739, 1, 65536, 393240, 1, 65539, 524275, 1, 65536, 458776, 1, 65539, 589811, 1, 65536, 524312, 1, 65539, 655347, 1, 65536, 589848, 1, 65539, 720883, 1, 65536, 655384, 1, 65539, 786419, 1, 65536, 720920, 1, 65539, 851955, 1, 65536, 786456, 1, 65539, 917491, 1, 65536, 851992, 1, 65539, 983027, 1, 65536, 917528, 1, 65539, 1048563, 1, 65536, 983064, 1, 65539, 1114099, 1, 131072, 1114100, 1, 131073, 1114101, 1, 131073, 1114102, 1, 131073, 1114103, 1, 131073, 1114104, 1, 131073, 1114105, 1, 131073, 1114106, 1, 131073, 1114107, 1, 131073, 1114108, 1, 131073, 1114109, 1, 131073, 1114110, 1, 131073, 1114111, 1, 131073, 1048576, 1, 131073, 1048577, 1, 131073, 1048578, 1, 131073, 1048579, 1, 131073, 1048580, 1, 131073, 1048581, 1, 131073, 1048582, 1, 131073, 1048583, 1, 131073, 1048584, 1, 131073, 1048585, 1, 131073, 1048586, 1, 131073, 1048587, 1, 131073, 1048588, 1, 131073, 1048589, 1, 131073, 1048590, 1, 131073, 1048591, 1, 131073, 1048592, 1, 131073, 1048593, 1, 131073, 1048594, 1, 131073, 1048595, 1, 131073, 1048596, 1, 131073, 1048597, 1, 131073, 1048598, 1, 131073, 1048599, 1, 131073, 1048600, 1, 131075 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+scale = Vector2( -1, 1 )
+collision_layer = 4
+collision_mask = 33
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.6, 0.6 )
+
+[node name="Collision" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0, 12 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "er"
+}
+
+[node name="Sprite" type="Sprite" parent="Player"]
+texture = ExtResource( 2 )
+hframes = 8
+vframes = 5
+frame = 22
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+autoplay = "idle"
+anims/RESET = SubResource( 31 )
+anims/attack = SubResource( 30 )
+anims/idle = SubResource( 28 )
+anims/run = SubResource( 29 )
+
+[node name="OneState" parent="Player" instance=ExtResource( 5 )]
+states = [ "idle", "run", "attack" ]
+
+[node name="HitBox" type="Area2D" parent="Player"]
+collision_layer = 8
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/HitBox"]
+position = Vector2( 11, 5.5 )
+shape = SubResource( 32 )
+
+[node name="HurtBox" type="Area2D" parent="Player"]
+collision_layer = 16
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/HurtBox"]
+position = Vector2( 0, 3 )
+shape = SubResource( 33 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = -128.0
+margin_top = -97.0
+margin_right = -88.0
+margin_bottom = -83.0
+script = ExtResource( 7 )
+
+[node name="Enemy" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy12" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy13" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy14" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy15" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy16" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy17" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy18" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy19" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy20" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy21" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy22" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy23" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy24" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy25" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy26" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy27" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy28" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy29" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy30" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy31" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy32" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy33" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy34" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy35" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy36" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy37" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy38" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy39" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy40" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy41" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy42" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy43" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy44" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy45" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy46" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy47" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy48" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy49" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy50" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy51" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy52" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy53" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy54" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy55" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy56" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy57" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy58" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy59" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy60" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy61" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy62" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy63" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy64" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy65" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy66" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy67" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy68" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy69" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy70" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy71" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy72" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy73" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy74" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy75" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy76" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy77" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy78" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy79" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy80" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy81" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy82" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy83" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy84" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy85" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy86" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy87" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy88" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy89" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy90" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy91" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy92" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy93" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy94" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy95" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy96" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy97" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy98" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy99" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy100" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy101" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy102" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy103" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy104" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy105" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy106" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy107" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy108" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy109" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy110" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy111" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy112" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy113" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy114" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy115" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy116" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy117" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy118" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy119" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy120" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy121" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy122" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy123" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy124" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy125" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy126" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy127" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy128" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy129" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy130" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy131" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy132" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy133" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy134" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy135" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy136" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy137" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy138" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy139" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy140" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy141" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy142" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy143" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy144" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy145" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy146" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy147" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy148" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy149" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy150" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy151" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy152" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy153" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy154" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy155" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy156" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy157" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy158" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy159" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy160" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy161" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy162" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy163" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy164" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy165" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy166" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy167" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy168" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy169" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy170" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy171" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy172" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy173" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy174" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy175" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy176" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy177" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy178" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy179" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy180" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy181" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy182" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy183" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy184" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy185" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy186" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy187" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy188" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy189" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy190" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy191" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy192" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy193" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy194" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy195" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy196" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy197" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy198" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy199" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy200" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy201" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy202" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy203" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy204" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy205" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy206" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy207" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy208" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy209" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy210" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy211" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy212" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy213" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy214" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy215" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy216" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy217" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy218" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy219" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy220" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy221" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy222" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy223" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy224" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy225" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy226" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy227" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy228" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy229" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy230" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy231" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy232" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy233" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy234" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy235" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy236" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy237" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy238" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy239" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy240" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy241" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy242" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy243" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy244" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy245" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy246" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy247" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy248" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy249" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy250" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy251" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy252" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy253" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy254" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy255" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy256" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy257" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy258" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy259" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy260" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy261" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy262" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy263" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy264" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy265" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy266" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy267" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy268" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy269" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy270" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy271" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy272" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy273" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy274" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy275" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy276" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy277" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy278" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy279" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy280" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy281" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy282" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy283" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy284" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy285" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy286" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy287" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy288" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy289" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy290" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy291" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy292" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy293" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy294" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy295" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy296" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy297" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy298" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy299" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy300" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy301" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy302" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy303" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy304" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy305" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy306" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy307" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy308" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy309" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy310" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy311" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy312" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy313" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy314" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy315" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy316" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy317" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy318" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy319" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy320" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy321" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy322" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy323" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy324" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy325" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy326" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy327" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy328" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy329" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy330" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy331" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy332" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy333" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy334" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy335" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy336" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy337" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy338" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy339" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy340" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy341" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy342" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy343" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy344" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy345" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy346" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy347" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy348" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy349" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy350" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy351" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy352" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy353" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy354" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy355" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy356" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy357" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy358" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy359" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy360" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy361" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy362" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy363" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy364" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy365" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy366" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy367" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy368" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy369" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy370" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy371" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy372" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy373" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy374" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy375" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy376" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy377" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy378" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy379" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy380" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy381" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy382" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy383" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy384" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy385" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy386" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy387" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy388" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy389" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy390" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy391" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy392" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy393" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy394" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy395" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy396" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy397" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy398" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy399" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy400" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy401" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy402" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy403" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy404" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy405" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy406" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy407" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy408" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy409" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy410" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy411" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy412" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy413" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy414" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy415" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy416" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy417" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy418" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy419" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy420" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy421" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy422" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy423" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy424" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy425" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy426" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy427" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy428" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy429" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy430" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy431" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy432" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy433" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy434" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy435" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy436" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy437" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy438" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy439" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy440" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy441" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy442" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy443" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy444" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy445" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy446" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy447" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy448" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy449" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy450" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy451" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy452" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy453" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy454" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy455" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy456" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy457" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy458" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy459" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy460" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy461" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy462" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy463" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy464" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy465" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy466" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy467" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy468" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy469" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy470" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy471" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy472" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy473" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy474" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy475" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy476" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy477" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy478" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy479" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[node name="Enemy480" parent="." instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+target_path = NodePath("../Player")
+
+[connection signal="animation_finished" from="Player/AnimationPlayer" to="Player" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="area_entered" from="Player/HurtBox" to="Player" method="_on_HurtBox_area_entered"]

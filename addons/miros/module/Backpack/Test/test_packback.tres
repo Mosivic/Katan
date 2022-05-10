@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/miros/module/Backpack/BackpackResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+data = {
+"icon": {
+"count": 2,
+"index": 0,
+"name": "icon",
+"texture": "res://icon.png"
+}
+}

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/牛X哥BGM.mp3-57065a53e0b364718e7c93ea05c3c849.mp3str"
+
+[deps]
+
+source_file="res://addons/miros/resource/sound/牛X哥BGM.mp3"
+dest_files=[ "res://.import/牛X哥BGM.mp3-57065a53e0b364718e7c93ea05c3c849.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

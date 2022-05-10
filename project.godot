@@ -1,0 +1,203 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "ActionBase",
+"language": "GDScript",
+"path": "res://addons/miros/module/Action/ActionBase.gd"
+}, {
+"base": "Node",
+"class": "ActionManager",
+"language": "GDScript",
+"path": "res://addons/miros/module/Action/ActionManager.gd"
+}, {
+"base": "Node",
+"class": "BTEngine",
+"language": "GDScript",
+"path": "res://addons/miros/module/BehaviorTree/Util/BTEngine.gd"
+}, {
+"base": "Resource",
+"class": "BTGraphResource",
+"language": "GDScript",
+"path": "res://addons/miros/module/BehaviorTree/Util/BTGraph/BTGraphResource.gd"
+}, {
+"base": "Node",
+"class": "BTNodeBase",
+"language": "GDScript",
+"path": "res://addons/miros/module/BehaviorTree/Node/BTNode.gd"
+}, {
+"base": "PanelContainer",
+"class": "BackpackBase",
+"language": "GDScript",
+"path": "res://addons/miros/module/Backpack/BackpackBase.gd"
+}, {
+"base": "Reference",
+"class": "Blackboard",
+"language": "GDScript",
+"path": "res://addons/miros/module/Unitool/Blackboard.gd"
+}, {
+"base": "Node2D",
+"class": "GameTool",
+"language": "GDScript",
+"path": "res://addons/miros/module/Unitool/GameTool.gd"
+}, {
+"base": "Node",
+"class": "InputAction",
+"language": "GDScript",
+"path": "res://addons/miros/module/Unitool/Input/InputAction.gd"
+}, {
+"base": "Reference",
+"class": "STATE",
+"language": "GDScript",
+"path": "res://addons/miros/module/Unitool/STATE.gd"
+}, {
+"base": "Reference",
+"class": "STRAgentLocation",
+"language": "GDScript",
+"path": "res://addons/miros/module/Steering/STRAgentLocation.gd"
+}, {
+"base": "Reference",
+"class": "STRStrategy",
+"language": "GDScript",
+"path": "res://addons/miros/module/Steering/Strategy/STRStrategy.gd"
+}, {
+"base": "Reference",
+"class": "STRTarget",
+"language": "GDScript",
+"path": "res://addons/miros/module/Steering/STRTarget.gd"
+}, {
+"base": "Node",
+"class": "SavaManager",
+"language": "GDScript",
+"path": "res://addons/miros/module/Unitool/File/SaveManager.gd"
+}, {
+"base": "AudioStreamPlayer",
+"class": "SoundManager",
+"language": "GDScript",
+"path": "res://addons/miros/module/Unitool/SoundManager.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://addons/miros/module/OneModel/StateMachine/StateMachine.gd"
+}, {
+"base": "Node",
+"class": "StateTask",
+"language": "GDScript",
+"path": "res://addons/miros/module/OneModel/StateMachine/StateTask.gd"
+}, {
+"base": "Node2D",
+"class": "Tilemap",
+"language": "GDScript",
+"path": "res://addons/miros/module/TileEditor/Tilemap.gd"
+}, {
+"base": "Resource",
+"class": "TilemapResource",
+"language": "GDScript",
+"path": "res://addons/miros/module/TileEditor/TilemapResource.gd"
+}, {
+"base": "Reference",
+"class": "Timeline",
+"language": "GDScript",
+"path": "res://addons/miros/module/Timeline/TImeline.gd"
+}, {
+"base": "Node",
+"class": "TimelineManager",
+"language": "GDScript",
+"path": "res://addons/miros/module/Timeline/TimelineManager.gd"
+}, {
+"base": "Node",
+"class": "UIBuilder",
+"language": "GDScript",
+"path": "res://addons/miros/module/Unitool/UI/UIBuilder.gd"
+} ]
+_global_script_class_icons={
+"ActionBase": "",
+"ActionManager": "",
+"BTEngine": "",
+"BTGraphResource": "",
+"BTNodeBase": "",
+"BackpackBase": "",
+"Blackboard": "",
+"GameTool": "",
+"InputAction": "",
+"STATE": "",
+"STRAgentLocation": "",
+"STRStrategy": "",
+"STRTarget": "",
+"SavaManager": "",
+"SoundManager": "",
+"StateMachine": "",
+"StateTask": "",
+"Tilemap": "",
+"TilemapResource": "",
+"Timeline": "",
+"TimelineManager": "",
+"UIBuilder": ""
+}
+
+[application]
+
+config/name="Katan"
+run/main_scene="res://scene/World.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[input]
+
+right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Wall"
+2d_physics/layer_3="Player"
+2d_physics/layer_4="PlayerHitBox"
+2d_physics/layer_5="PlayerHurtBox"
+2d_physics/layer_6="Enemy"
+2d_physics/layer_7="EnemyHitBox"
+2d_physics/layer_8="EnemyHurtBox"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
