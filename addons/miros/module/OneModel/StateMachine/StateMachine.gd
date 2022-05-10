@@ -33,11 +33,14 @@ func backward():
 func select(state:String):
 	current_state = state
 	current_node = find_node(current_state)
+	if current_node.has_method("task"):
+		current_node.task()
 	
 
 func _process(delta):
 	if current_node.has_method("process_task"):
 		current_node.process_task(delta)
+
 
 func _physics_process(delta):
 	if current_node.has_method("physics_process_task"):
@@ -48,6 +51,7 @@ func build_state_tree(current:Node,left:String):
 
 	var right:Array
 	for child in children:
+		(child as StateTask).state_machine = self
 		right.append(child.name)
 		build_state_tree(child,current.name)
 	state_tree[current.name] = {

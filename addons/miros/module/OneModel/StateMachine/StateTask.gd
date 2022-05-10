@@ -1,12 +1,6 @@
 class_name StateTask
 extends Node
 
-var state_machine:StateMachine
+var state_machine
 
 
-func process_task(delta):
-	pass
-
-
-func physics_process_task(delta):
-	pass
