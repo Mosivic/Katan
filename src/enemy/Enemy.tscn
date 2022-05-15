@@ -87,7 +87,8 @@ resource_local_to_scene = true
 extents = Vector2( 0, 0 )
 
 [node name="Enemy" type="KinematicBody2D"]
-collision_layer = 0
+collision_layer = 32
+collision_mask = 33
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -110,7 +111,6 @@ __meta__ = {
 }
 
 [node name="HitBox" type="Area2D" parent="."]
-visible = false
 collision_layer = 32
 collision_mask = 16
 monitoring = false

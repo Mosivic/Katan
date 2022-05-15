@@ -7,10 +7,11 @@ onready var one_state = $OneState
 var speed = 80
 var velocity = Vector2.ZERO
 
+var uim = UIM.new()
 
 func _ready():
+	uim.is_can_catched = false
 	setup_state()
-
 
 
 func _process(_delta):

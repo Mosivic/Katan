@@ -9,8 +9,10 @@ var current_node:Node = self
 var current_state:String = name
 
 var default_state:String 
+var host
 
 func _ready():
+	host = get_parent()
 	build_state_tree(self,"")
 
 func set_default_state(state:String):
@@ -38,13 +40,25 @@ func select(state:String):
 	
 
 func _process(delta):
-	if current_node.has_method("process_task"):
-		current_node.process_task(delta)
+	if check_pause(false): return
+	current_node.process_task(delta)
 
 
 func _physics_process(delta):
-	if current_node.has_method("physics_process_task"):
-		current_node.physics_process_task(delta)
+	if check_pause(true): return
+	current_node.physics_process_task(delta)
+
+# 检测是否能继续运行
+func check_pause(is_physics:bool)->bool:
+	if host and "uim" in host and host.uim.is_catched == true:
+		return true
+	if current_node == null:
+		return true
+	if is_physics and not current_node.has_method("physics_process_task"):
+		return true
+	if not is_physics and not current_node.has_method("process_task"):
+		return true
+	return false
 
 func build_state_tree(current:Node,left:String):
 	var children = current.get_children()
