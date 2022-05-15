@@ -25,11 +25,11 @@ var chase_target:Node2D = null
 var find_range = 100
 var attack_range = 20
 
-var uim = UIM.new()
+var token = TokenBase.new()
 
 func _ready():
 	randomize()
-	uim.size = 10
+	token.size = 8
 	chase_target = get_node(target_path)
 	state_machine.set_default_state("Idle")
 

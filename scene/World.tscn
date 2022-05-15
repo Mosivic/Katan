@@ -429,6 +429,8 @@ collision_mask = 64
 position = Vector2( 0, 3 )
 shape = SubResource( 33 )
 
+[node name="Chimaera" parent="Player" instance=ExtResource( 8 )]
+
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -547,8 +549,6 @@ target_path = NodePath("../Player")
 [node name="Enemy27" parent="." instance=ExtResource( 6 )]
 position = Vector2( 207, 62 )
 target_path = NodePath("../Player")
-
-[node name="Chimaera" parent="." instance=ExtResource( 8 )]
 
 [connection signal="animation_finished" from="Player/AnimationPlayer" to="Player" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="Player/HurtBox" to="Player" method="_on_HurtBox_area_entered"]

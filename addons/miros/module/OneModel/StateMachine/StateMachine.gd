@@ -50,7 +50,7 @@ func _physics_process(delta):
 
 # 检测是否能继续运行
 func check_pause(is_physics:bool)->bool:
-	if host and "uim" in host and host.uim.is_catched == true:
+	if host and "token" in host and host.token.is_catched == true:
 		return true
 	if current_node == null:
 		return true

@@ -119,15 +119,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/miros/module/Timeline/TimelineManager.gd"
 }, {
+"base": "Reference",
+"class": "TokenBase",
+"language": "GDScript",
+"path": "res://src/token/TokenBase.gd"
+}, {
 "base": "Node",
 "class": "UIBuilder",
 "language": "GDScript",
 "path": "res://addons/miros/module/Unitool/UI/UIBuilder.gd"
-}, {
-"base": "Reference",
-"class": "UIM",
-"language": "GDScript",
-"path": "res://src/UIM.gd"
 } ]
 _global_script_class_icons={
 "ActionBase": "",
@@ -152,8 +152,8 @@ _global_script_class_icons={
 "TilemapResource": "",
 "Timeline": "",
 "TimelineManager": "",
-"UIBuilder": "",
-"UIM": ""
+"TokenBase": "",
+"UIBuilder": ""
 }
 
 [application]
