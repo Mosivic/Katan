@@ -21,10 +21,10 @@ func _ready():
 	init_points()
 	get_parent().resgister_compoent(self)
 
-func _process(delta):
-	for i in single_map.keys():
-		var single:Node2D= single_map[i]
-		single.global_position = global_position + trans_points[i]
+#func _process(delta):
+#	for i in single_map.keys():
+#		var single:Node2D= single_map[i]
+#		single.global_position = global_position + trans_points[i]
 
 func init_points():
 	var points = curve.get_baked_points()
@@ -58,19 +58,18 @@ func update_single_position(ref:Node2D,pos:Vector2):
 	ref.global_position = pos
 
 
-func assemble_single(catched:Node2D)->bool:
-	# Catch
+func assemble_single(caught:Node2D)->bool:
+	# Assemble Succeed
 	for i in range(origin_points.size()-1):
-		var result = check_insert(i,catched.token.size)
+		var result = check_insert(i,caught.size)
 		if result:
-			single_map[i] = catched
-			catched.global_position =  points_info[i]["pos"]
-			catched.token.is_catched = true
+			single_map[i] = caught
+			caught.set_caught(get_parent().brain)
 			
 			return true
 		else:
 			continue
-	# Not catched
+	# Assemble Failed
 	return false
 
 func check_insert(i,size)->bool:

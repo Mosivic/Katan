@@ -5,77 +5,80 @@ extends Node
 
 var state_tree:Dictionary
 
-var current_node:Node = self
+var current_state_node:StateTask
 var current_state:String = name
-
 var default_state:String 
-var host
+
+var is_pause := true
+var host:Node2D
+
 
 func _ready():
 	host = get_parent()
 	build_state_tree(self,"")
 
-func set_default_state(state:String):
-	default_state = state
-	current_state = state
-	current_node = find_node(state)
+func launch(default:String,_host):
+	default_state = default
+	current_state = default
+	current_state_node = find_node(default)
+	host = _host
+	is_pause = false
 
+func run():
+	is_pause = false
+
+func pause():
+	is_pause = true
 
 # 返回上一级
 func backward():
 	var left_state = state_tree[current_state]["left"]
-	if not left_state == name:
-		current_state = default_state
-		current_node = find_node(current_state)
+	if left_state == name:
+		_switch_state(default_state)
 	else:
-		current_state = left_state
-		current_node = find_node(current_state)
+		_switch_state(left_state)
 
 # 选择
 func select(state:String):
-	current_state = state
-	current_node = find_node(current_state)
-	if current_node.has_method("task"):
-		current_node.task()
+	_switch_state(state)
 	
 
+func _switch_state(to:String,from:String=current_state):
+	var from_state_node = find_node(from)
+	var to_state_node = find_node(to)
+	from_state_node.exit()
+	to_state_node.enter()
+	current_state = to
+	current_state_node = to_state_node
+
 func _process(delta):
-	if check_pause(false): return
-	current_node.process_task(delta)
+	check_and_run(delta,false)
 
 
 func _physics_process(delta):
-	if check_pause(true): return
-	current_node.physics_process_task(delta)
+	check_and_run(delta,true)
 
 # 检测是否能继续运行
-func check_pause(is_physics:bool)->bool:
-	if host and "token" in host and host.token.is_catched == true:
-		return true
-	if current_node == null:
-		return true
-	if is_physics and not current_node.has_method("physics_process_task"):
-		return true
-	if not is_physics and not current_node.has_method("process_task"):
-		return true
-	return false
+func check_and_run(delta,is_physics:bool):
+	if is_pause:
+		return
+	current_state_node.execute(is_physics,delta)
+	
 
 func build_state_tree(current:Node,left:String):
 	var children = current.get_children()
 
 	var right:Array
 	for child in children:
-		(child as StateTask).state_machine = self
-		right.append(child.name)
-		build_state_tree(child,current.name)
+		if child is StateTask:
+			child.host = host
+			child.connect("select",self,"select")
+			child.connect("back",self,"back")
+
+			right.append(child.name)
+			build_state_tree(child,current.name)
 	state_tree[current.name] = {
 		"left":left,
 		"right":right,
 	}
-
-
-
-
-
-
 

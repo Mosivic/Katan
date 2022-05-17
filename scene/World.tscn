@@ -1,13 +1,10 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://asset/pic/test_00/TX Tileset Grass.png" type="Texture" id=1]
-[ext_resource path="res://asset/pic/test_01_player/Gladiator-Sprite Sheet.png" type="Texture" id=2]
-[ext_resource path="res://src/player/player.gd" type="Script" id=3]
+[ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://asset/pic/test_00/TX Tileset Wall.png" type="Texture" id=4]
-[ext_resource path="res://addons/miros/module/OneModel/OneState.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/enemy/Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scene/fps.gd" type="Script" id=7]
-[ext_resource path="res://src/chinaera/Chimaera.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "TX Tileset Grass.png 0"
@@ -275,91 +272,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 1/z_index = 0
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 5.0
-height = 0.0
-
-[sub_resource type="Animation" id=31]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("HitBox/CollisionShape2D:shape:extents")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=30]
-resource_name = "attack"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 2 ), Vector2( 6, 2 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("HitBox/CollisionShape2D:shape:extents")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 0, 0 ), Vector2( 5, 8.5 ), Vector2( 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=28]
-resource_name = "idle"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 4, 0 ) ]
-}
-
-[sub_resource type="Animation" id=29]
-resource_name = "run"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 1 ), Vector2( 7, 1 ) ]
-}
-
-[sub_resource type="RectangleShape2D" id=32]
-extents = Vector2( 0, 0 )
-
-[sub_resource type="CapsuleShape2D" id=33]
-radius = 8.0
-height = 8.0
-
 [node name="World" type="Node2D"]
 
 [node name="YSort" type="YSort" parent="."]
@@ -377,59 +289,7 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -655373, 1, 0, -655372, 1, 2, -655371, 1, 2, -655370, 1, 2, -655369, 1, 2, -655368, 1, 2, -655367, 1, 2, -655366, 1, 2, -655365, 1, 2, -655364, 1, 2, -655363, 1, 2, -655362, 1, 2, -655361, 1, 2, -720896, 1, 2, -720895, 1, 2, -720894, 1, 2, -720893, 1, 2, -720892, 1, 2, -720891, 1, 2, -720890, 1, 2, -720889, 1, 2, -720888, 1, 2, -720887, 1, 2, -720886, 1, 2, -720885, 1, 2, -720884, 1, 2, -720883, 1, 2, -720882, 1, 2, -720881, 1, 2, -720880, 1, 2, -720879, 1, 2, -720878, 1, 2, -720877, 1, 2, -720876, 1, 2, -720875, 1, 2, -720874, 1, 2, -720873, 1, 2, -720872, 1, 3, -589837, 1, 65536, -655336, 1, 65539, -524301, 1, 65536, -589800, 1, 65539, -458765, 1, 65536, -524264, 1, 65539, -393229, 1, 65536, -458728, 1, 65539, -327693, 1, 65536, -393192, 1, 65539, -262157, 1, 65536, -327656, 1, 65539, -196621, 1, 65536, -262120, 1, 65539, -131085, 1, 65536, -196584, 1, 65539, -65549, 1, 65536, -131048, 1, 65539, -13, 1, 65536, -65512, 1, 65539, 65523, 1, 65536, 24, 1, 65539, 131059, 1, 65536, 65560, 1, 65539, 196595, 1, 65536, 131096, 1, 65539, 262131, 1, 65536, 196632, 1, 65539, 327667, 1, 65536, 262168, 1, 65539, 393203, 1, 65536, 327704, 1, 65539, 458739, 1, 65536, 393240, 1, 65539, 524275, 1, 65536, 458776, 1, 65539, 589811, 1, 65536, 524312, 1, 65539, 655347, 1, 65536, 589848, 1, 65539, 720883, 1, 65536, 655384, 1, 65539, 786419, 1, 65536, 720920, 1, 65539, 851955, 1, 65536, 786456, 1, 65539, 917491, 1, 65536, 851992, 1, 65539, 983027, 1, 65536, 917528, 1, 65539, 1048563, 1, 65536, 983064, 1, 65539, 1114099, 1, 131072, 1114100, 1, 131073, 1114101, 1, 131073, 1114102, 1, 131073, 1114103, 1, 131073, 1114104, 1, 131073, 1114105, 1, 131073, 1114106, 1, 131073, 1114107, 1, 131073, 1114108, 1, 131073, 1114109, 1, 131073, 1114110, 1, 131073, 1114111, 1, 131073, 1048576, 1, 131073, 1048577, 1, 131073, 1048578, 1, 131073, 1048579, 1, 131073, 1048580, 1, 131073, 1048581, 1, 131073, 1048582, 1, 131073, 1048583, 1, 131073, 1048584, 1, 131073, 1048585, 1, 131073, 1048586, 1, 131073, 1048587, 1, 131073, 1048588, 1, 131073, 1048589, 1, 131073, 1048590, 1, 131073, 1048591, 1, 131073, 1048592, 1, 131073, 1048593, 1, 131073, 1048594, 1, 131073, 1048595, 1, 131073, 1048596, 1, 131073, 1048597, 1, 131073, 1048598, 1, 131073, 1048599, 1, 131073, 1048600, 1, 131075 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
-scale = Vector2( -1, 1 )
-collision_layer = 4
-collision_mask = 33
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
-zoom = Vector2( 0.6, 0.6 )
-
-[node name="Collision" type="CollisionShape2D" parent="Player"]
-position = Vector2( 0, 12 )
-shape = SubResource( 2 )
-__meta__ = {
-"_editor_description_": "er"
-}
-
-[node name="Sprite" type="Sprite" parent="Player"]
-texture = ExtResource( 2 )
-hframes = 8
-vframes = 5
-frame = 22
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
-autoplay = "idle"
-anims/RESET = SubResource( 31 )
-anims/attack = SubResource( 30 )
-anims/idle = SubResource( 28 )
-anims/run = SubResource( 29 )
-
-[node name="OneState" parent="Player" instance=ExtResource( 5 )]
-states = [ "idle", "run", "attack" ]
-
-[node name="HitBox" type="Area2D" parent="Player"]
-collision_layer = 8
-collision_mask = 128
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/HitBox"]
-position = Vector2( 11, 5.5 )
-shape = SubResource( 32 )
-
-[node name="HurtBox" type="Area2D" parent="Player"]
-collision_layer = 16
-collision_mask = 64
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/HurtBox"]
-position = Vector2( 0, 3 )
-shape = SubResource( 33 )
-
-[node name="Chimaera" parent="Player" instance=ExtResource( 8 )]
+[node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
@@ -444,111 +304,3 @@ script = ExtResource( 7 )
 
 [node name="Enemy" parent="." instance=ExtResource( 6 )]
 position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy7" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy8" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy9" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy10" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy11" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy12" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy13" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy14" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy15" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy16" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy17" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy18" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy19" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy20" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy21" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy22" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy23" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy24" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy25" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy26" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[node name="Enemy27" parent="." instance=ExtResource( 6 )]
-position = Vector2( 207, 62 )
-target_path = NodePath("../Player")
-
-[connection signal="animation_finished" from="Player/AnimationPlayer" to="Player" method="_on_AnimationPlayer_animation_finished"]
-[connection signal="area_entered" from="Player/HurtBox" to="Player" method="_on_HurtBox_area_entered"]

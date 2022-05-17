@@ -4,9 +4,11 @@ extends Node2D
 onready var CatchArea = $CatchArea
 
 var compoents := {}
-var catched_singles := []
+var caught_singles := []
+var brain
 
 func _ready():
+	brain = get_parent()
 	CatchArea.monitoring = true
 
 func _process(delta):
@@ -20,27 +22,26 @@ func resgister_compoent(compoent):
 
 func assemble_single_to_compoent():
 	while true:
-		if catched_singles.size() == 0:break
-		var single = catched_singles[-1]
+		if caught_singles.size() == 0:break
+		var single = caught_singles[-1]
 		for key in compoents.keys():
 			var ref = compoents[key]["ref"]
 			var result = ref.assemble_single(single)
 			# 分配成功, 继续下次while循环
 			if result:
 				print("Catch Succeed with name: " + single.name + " by Compoent: " + key)
-				catched_singles.pop_back()
+				caught_singles.pop_back()
 				break
 		# 分配失败,跳出while循环
 		break
 
 
-
-# body must have "token" property and can be catched
+# body must can be caught
 func _on_CatchArea_body_entered(body):
-	if not "token" in body: return
-	if body.token.is_can_catched == false: return
+	if not "is_can_caught" in body: return
+	if body.is_can_caught == false: return
 	
-	catched_singles.append(body)
+	caught_singles.append(body)
 	
 
 

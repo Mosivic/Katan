@@ -1,20 +1,20 @@
 extends StateTask
 
-onready var actor = get_node("../..")
 
-func task():
-	actor.animation_player.play("attack")
+
+func _enter_task():
+	host.animation_player.play("attack")
 	
-	var dir = actor.chase_target.global_position - actor.global_position
+	var dir = host.chase_target.global_position - host.global_position
 	if dir.x > 0:
-		actor.sprite.flip_h = true
-		actor.hit_box.scale = Vector2(-1,1)
+		host.sprite.flip_h = true
+		host.hit_box.scale = Vector2(-1,1)
 	else:
-		actor.sprite.flip_h = false
-		actor.hit_box.scale = Vector2(1,1)
+		host.sprite.flip_h = false
+		host.hit_box.scale = Vector2(1,1)
 	
 
-func process_task(_delta):
-	if not actor.animation_player.is_playing():
-		state_machine.select("Idle")
+func _process_task(_delta):
+	if not host.animation_player.is_playing():
+		emit_signal("select","Idle")
 	

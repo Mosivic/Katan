@@ -1,0 +1,148 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://src/chinaera/Chimaera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/miros/module/OneModel/OneState.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/player/player.gd" type="Script" id=4]
+[ext_resource path="res://asset/pic/test_01_player/Gladiator-Sprite Sheet.png" type="Texture" id=5]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 5.0
+height = 0.0
+
+[sub_resource type="Animation" id=31]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("HitBox/CollisionShape2D:shape:extents")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 2 ), Vector2( 6, 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HitBox/CollisionShape2D:shape:extents")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( 5, 8.5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "idle"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 4, 0 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "run"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1 ), Vector2( 7, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 0, 0 )
+
+[sub_resource type="CapsuleShape2D" id=33]
+radius = 8.0
+height = 8.0
+
+[node name="Player" type="KinematicBody2D" groups=["Player"]]
+scale = Vector2( -1, 1 )
+collision_layer = 4
+collision_mask = 33
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.6, 0.6 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 12 )
+shape = SubResource( 2 )
+__meta__ = {
+"_editor_description_": "er"
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+hframes = 8
+vframes = 5
+frame = 22
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/RESET = SubResource( 31 )
+anims/attack = SubResource( 30 )
+anims/idle = SubResource( 28 )
+anims/run = SubResource( 29 )
+
+[node name="OneState" parent="." instance=ExtResource( 2 )]
+states = [ "idle", "run", "attack" ]
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2( 11, 5.5 )
+shape = SubResource( 32 )
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2( 0, 3 )
+shape = SubResource( 33 )
+
+[node name="Chimaera" parent="." instance=ExtResource( 1 )]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]

@@ -1,23 +1,23 @@
 extends StateTask
 
-onready var actor = get_node("../..")
 
-func physics_process_task(delta):
-	actor.animation_player.play("run")
-	actor.velocity = actor.move_and_slide(actor.velocity)
+
+func _physics_process_task(delta):
+	host.animation_player.play("run")
+	host.velocity = host.move_and_slide(host.velocity)
 	
-	if actor.velocity.x > 0 :
-		actor.sprite.flip_h = true
+	if host.velocity.x > 0 :
+		host.sprite.flip_h = true
 	else:
-		actor.sprite.flip_h = false
+		host.sprite.flip_h = false
 	
-	actor.change_state_time -= delta
+	host.change_state_time -= delta
 
 	# Check range -> Chase
-	if actor.is_on_target_range():
-		state_machine.select("Chase")
+	if host.is_on_target_range():
+		emit_signal("select","Chase")
 
 	# Time out -> Run
-	if actor.change_state_time <= 0:
-		actor.change_state_time = actor.natrue_change_state_time
-		state_machine.select("Run")
+	if host.change_state_time <= 0:
+		host.change_state_time = host.natrue_change_state_time
+		emit_signal("select","Idle")

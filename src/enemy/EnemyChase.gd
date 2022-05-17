@@ -1,20 +1,18 @@
 extends StateTask
 
 
-onready var actor = get_node("../..")
-
-func physics_process_task(_delta):
-	actor.animation_player.play("run")
-	if actor.velocity.x > 0 :
-		actor.sprite.flip_h = true
+func _physics_process_task(_delta):
+	host.animation_player.play("run")
+	if host.velocity.x > 0 :
+		host.sprite.flip_h = true
 	else:
-		actor.sprite.flip_h = false
-	actor.direction = (actor.chase_target.global_position - actor.global_position).normalized()
-	actor.velocity = actor.chase_speed * actor.direction
-	actor.velocity = actor.move_and_slide(actor.velocity)
+		host.sprite.flip_h = false
+	host.direction = (host.chase_target.global_position - host.global_position).normalized()
+	host.velocity = host.chase_speed * host.direction
+	host.velocity = host.move_and_slide(host.velocity)
 	
 	# Check Range ->Attack/Idle
-	if actor.is_on_attack_range():
-		state_machine.select("Attack")
-	if not actor.is_on_target_range():
-		state_machine.select("Idle")
+	if host.is_on_attack_range():
+		emit_signal("select","Attack")
+	if not host.is_on_target_range():
+		emit_signal("select","Idle")

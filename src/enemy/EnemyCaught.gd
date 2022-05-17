@@ -1,7 +1,6 @@
 extends StateTask
 
 
-onready var actor = get_node("../..")
 
-func physics_process_task(_delta):
+func _physics_process_task(_delta):
 	pass
