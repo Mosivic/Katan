@@ -302,5 +302,238 @@ margin_right = -88.0
 margin_bottom = -83.0
 script = ExtResource( 7 )
 
-[node name="Enemy" parent="." instance=ExtResource( 6 )]
+[node name="MonsterSpawn" type="Position2D" parent="."]
+
+[node name="Enemy" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy2" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy3" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy4" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy5" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy6" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy7" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy8" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy9" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy10" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy11" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy12" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy13" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy14" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy15" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy16" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy17" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy18" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy19" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy20" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy21" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy22" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy23" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy24" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy25" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy26" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy27" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy28" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy29" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy30" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy31" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy32" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy33" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy34" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy35" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy36" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy37" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy38" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy39" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy40" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy41" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy42" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy43" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy44" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy45" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy46" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy47" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy48" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy49" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy50" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy51" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy52" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy53" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy54" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy55" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy56" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy57" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy58" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy59" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy60" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy61" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy62" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy63" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy64" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy65" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy66" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy67" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy68" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy69" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy70" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy71" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy72" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy73" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy74" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy75" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy76" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy77" parent="MonsterSpawn" instance=ExtResource( 6 )]
+position = Vector2( 207, 62 )
+
+[node name="Enemy78" parent="MonsterSpawn" instance=ExtResource( 6 )]
 position = Vector2( 207, 62 )

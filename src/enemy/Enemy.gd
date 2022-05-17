@@ -25,8 +25,9 @@ var attack_range = 20
 var brain = null
 var is_can_caught := true
 var is_caught := false
-var size := 5.0
+var collision_radius := 5.0
 
+var target_position := Vector2.ZERO
 
 func _ready():
 	randomize()
@@ -35,6 +36,8 @@ func _ready():
 		chase_target = players[0]
 
 	machine.launch("Idle",self)
+
+
 
 func is_on_target_range()->bool:
 	var distance = global_position.distance_to(chase_target.global_position)
@@ -48,9 +51,15 @@ func is_on_attack_range()->bool:
 		return true
 	return false
 
-func set_caught(_brain):
+func set_state_caught(_brain):
 	brain = _brain
 	is_can_caught = false
 	is_caught = true
-	machine.select("Caughting")
+	machine.select("Caught")
 	pass
+
+func set_target_position(pos):
+	target_position = pos
+
+func get_collision_radius()->float:
+	return collision_radius

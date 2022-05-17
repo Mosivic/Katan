@@ -13,11 +13,11 @@ func execute(is_physics:bool,delta:float):
 		_process_task(delta)
 
 func enter():
-	print(host.name + " is enter State: " + name)
+	#print(host.name + " is enter State: " + name)
 	_enter_task()
 
 func exit():
-	print(host.name + " is exit State: " + name)
+	#print(host.name + " is exit State: " + name)
 	_exit_task()
 
 func _enter_task():
