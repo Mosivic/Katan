@@ -1,18 +1,12 @@
+class_name Chimaera
 extends Node2D
-
 
 onready var CatchArea = $CatchArea
 
 var compoents := {}
 var caught_singles := []
-var brain
 
-func _ready():
-	brain = get_parent()
-	CatchArea.monitoring = true
 
-func _process(delta):
-	assemble_single_to_compoent()
 
 func resgister_compoent(compoent):
 	compoents[compoent.name] = {
@@ -20,7 +14,10 @@ func resgister_compoent(compoent):
 		"type":compoent.type
 	}
 
-func assemble_single_to_compoent():
+func set_catchArea_monitoring(v:bool):
+	CatchArea.monitoring = v
+
+func catching()->Node2D:
 	while true:
 		if caught_singles.size() == 0:break
 		var single = caught_singles[-1]
@@ -29,11 +26,13 @@ func assemble_single_to_compoent():
 			var result = ref.assemble_single(single)
 			# 分配成功, 继续下次while循环
 			if result:
-				print("Catch Succeed with name: " + single.name + " by Compoent: " + key)
+				#print("Catch Succeed with name: " + single.name + " by Compoent: " + key)
 				caught_singles.pop_back()
+				return single
 				break
 		# 分配失败,跳出while循环
 		break
+	return null
 
 
 # body must can be caught

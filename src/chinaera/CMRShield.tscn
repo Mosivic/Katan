@@ -1,12 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://src/chinaera/CMRShield.gd" type="Script" id=1]
 
-[sub_resource type="Curve2D" id=1]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -54, -115, -201, -108, 201, 108, -60.0741, 86.7046 )
-}
-
 [node name="Shield" type="Path2D"]
-curve = SubResource( 1 )
 script = ExtResource( 1 )

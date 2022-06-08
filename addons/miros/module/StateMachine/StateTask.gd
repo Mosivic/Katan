@@ -4,7 +4,7 @@ extends Node
 signal select
 signal back
 
-var host:Node2D
+var host:KinematicObject
 
 func execute(is_physics:bool,delta:float):
 	if is_physics:
@@ -29,5 +29,5 @@ func _exit_task():
 func _physics_process_task(delta):
 	return
 
-func _process_task(_elta):
+func _process_task(_delta):
 	return

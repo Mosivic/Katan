@@ -1,28 +1,18 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://src/chinaera/Chimaera.tscn" type="PackedScene" id=1]
-[ext_resource path="res://addons/miros/module/OneModel/OneState.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/player/player.gd" type="Script" id=4]
-[ext_resource path="res://asset/pic/test_01_player/Gladiator-Sprite Sheet.png" type="Texture" id=5]
+[ext_resource path="res://asset/pic/test_01_player/Gladiator-Sprite Sheet.png" type="Texture" id=1]
+[ext_resource path="res://src/KinematicObject/Player/player.gd" type="Script" id=2]
+[ext_resource path="res://addons/miros/module/StateMachine/StateMachine.gd" type="Script" id=3]
+[ext_resource path="res://src/chinaera/Chimaera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/chinaera/CMRHand.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/KinematicObject/Player/PlayerState/PlayerIdle.gd" type="Script" id=6]
+[ext_resource path="res://src/KinematicObject/Player/PlayerRun.gd" type="Script" id=7]
+[ext_resource path="res://src/KinematicObject/Player/ChimaeraBrain.gd" type="Script" id=8]
+[ext_resource path="res://src/KinematicObject/Player/CMRCatch.gd" type="Script" id=9]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 5.0
 height = 0.0
-
-[sub_resource type="Animation" id=31]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("HitBox/CollisionShape2D:shape:extents")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
 
 [sub_resource type="Animation" id=30]
 resource_name = "attack"
@@ -90,14 +80,23 @@ extents = Vector2( 0, 0 )
 radius = 8.0
 height = 8.0
 
+[sub_resource type="Curve2D" id=34]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -20, -46, 0, 0, 0, 0, -39, -3, 0, 0, 0, 0, -19, 45 )
+}
+
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 scale = Vector2( -1, 1 )
 collision_layer = 4
 collision_mask = 33
-script = ExtResource( 4 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+is_enable_state_machine = true
+machine_path = NodePath("StateMachine")
+default_state_path = NodePath("StateMachine/Idle")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -111,20 +110,15 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 5 )
+texture = ExtResource( 1 )
 hframes = 8
 vframes = 5
-frame = 22
+frame = 16
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle"
-anims/RESET = SubResource( 31 )
 anims/attack = SubResource( 30 )
 anims/idle = SubResource( 28 )
 anims/run = SubResource( 29 )
-
-[node name="OneState" parent="." instance=ExtResource( 2 )]
-states = [ "idle", "run", "attack" ]
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 8
@@ -142,7 +136,28 @@ collision_mask = 64
 position = Vector2( 0, 3 )
 shape = SubResource( 33 )
 
-[node name="Chimaera" parent="." instance=ExtResource( 1 )]
+[node name="Chimaera" parent="." instance=ExtResource( 4 )]
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[node name="Hand" parent="Chimaera" instance=ExtResource( 5 )]
+curve = SubResource( 34 )
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource( 6 )
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource( 7 )
+
+[node name="Attack" type="Node" parent="StateMachine"]
+
+[node name="ChimaeraBrain" type="Node" parent="StateMachine"]
+script = ExtResource( 8 )
+
+[node name="CMRCatch" type="Node" parent="StateMachine/ChimaeraBrain"]
+script = ExtResource( 9 )
+
+[node name="CMRRun" type="Node" parent="StateMachine/ChimaeraBrain"]
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]

@@ -4,13 +4,14 @@ class_name StateMachine
 extends Node
 
 var state_tree:Dictionary
+var state_array:Array
 
 var current_state_node:StateTask
 var current_state:String = name
 var default_state:String 
 
 var is_pause := true
-var host:Node2D
+var host:KinematicObject
 
 
 func _ready():
@@ -65,6 +66,9 @@ func check_and_run(delta,is_physics:bool):
 	current_state_node.execute(is_physics,delta)
 	
 
+func has_state(_name:String):
+	return state_array.has(_name)
+
 func build_state_tree(current:Node,left:String):
 	var children = current.get_children()
 
@@ -81,4 +85,5 @@ func build_state_tree(current:Node,left:String):
 		"left":left,
 		"right":right,
 	}
+	state_array.append(current.name)
 

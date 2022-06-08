@@ -3,8 +3,8 @@ extends CMRBase
 
 func _ready():
 	type = TYPE.HAND
-	
-	
+
+
 
 func _input(event):
 	if event.is_action_pressed("click"):
@@ -16,5 +16,4 @@ func hand_rotate():
 		trans_points[i] = t
 		
 
-		
 
